@@ -14,6 +14,7 @@ public class GetController {
          return "Envoi de la liste des STB";
      }
 
+
      @GetMapping("/stbid")
     public String getSTBinXML(
          @RequestParam(value = "id") String texte) {
@@ -30,7 +31,7 @@ public class GetController {
 
      @RequestMapping(value = "/xml", produces = MediaType.APPLICATION_XML_VALUE)
     public @ResponseBody STB getXML() {
-         STB stb = new STB(123,"Test STB","2023-04-01T14:22:33");
+         STB stb = new STB(123,"Test STB","2023-04-01T14:22:33","stb de test","2023-04-01T14:22:30","Monsieur Arnaud");
          return stb;
      }
 }
