@@ -13,6 +13,7 @@ public class GetResumeXML {
     @RequestMapping(value = "/resume/xml", produces = MediaType.APPLICATION_XML_VALUE)
     public @ResponseBody String getResumeinXml(){
 
+        return null;
     }
 
     //faux

@@ -8,7 +8,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class TestSTB {
+public class
+TestSTB {
 
     public String loadFileXML() {
         Resource resource = new DefaultResourceLoader().getResource("classpath:xml/test0.xml");

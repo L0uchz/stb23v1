@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://univrouen.fr/stb23"
+	targetNamespace="http://univrouen.fr/stb23"
+	elementFormDefault="unqualified">
+
+<!-- Element Racine -->
+<xs:element name="stb" type="stbType"/>
+
+<!-- ComplexType -->
+<xs:complexType name="stbType">
+	<xs:sequence>
+		<xs:element name="title" type="restrictedString128" minOccurs="1" maxOccurs="1" default="STB 23"/>
+		<xs:element name="version" type="restrictedDecimalMin0.1" minOccurs="1" maxOccurs="1" default="0.1"/>
+		<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="description" type="restrictedString128" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="client" type="clientType" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="team" type="teamType" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="features" type="featuresType" minOccurs="1" maxOccurs="1"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="clientType">
+	<xs:sequence>
+		<xs:element name="entity" type="restrictedString32" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="person" type="personType"></xs:element>
+		<xs:choice>
+			<xs:element name="mail" type="mailType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="tel" type="telType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:sequence>
+</xs:complexType>
+
+
+<xs:complexType name="teamType">
+	<xs:sequence>
+		<xs:element name="member" type="memberType" minOccurs="2" maxOccurs="8"/>
+	</xs:sequence>
+</xs:complexType>
+
+	
+<xs:complexType name="featuresType">
+	<xs:sequence>
+		<xs:element name="feature" type="featureType" minOccurs="1" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+
+
+<xs:complexType name="personType">
+	<xs:sequence>
+		<xs:element name="nom" type="restrictedString32" minOccurs="1" maxOccurs="1"/>
+	</xs:sequence>
+	<xs:attribute name="gender" type="genderType" use="optional"/>
+	<xs:attribute name="lastname" type="restrictedString32" use="required"/>
+</xs:complexType>
+
+
+<xs:complexType name="memberType">
+	<xs:sequence>
+		<xs:element name="person" type="personType"></xs:element>
+		<xs:element name="mail" type="mailType" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="function" type="restrictedString128" minOccurs="1" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+
+
+<xs:complexType name="featureType">
+	<xs:sequence>
+		<xs:element name="description" type="restrictedString128" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="priority" type="priorityType" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="delivery" type="xs:date" minOccurs="0" maxOccurs="1"/>
+		<xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	</xs:sequence>
+	<xs:attribute name="name" type="restrictedString32" use="required"/>
+	<xs:attribute name="section" type="xs:int" use="required"/>
+	<xs:attribute name="number" type="xs:int" use="required"/>
+</xs:complexType>
+
+<!-- SimpleType -->
+
+<xs:simpleType name="restrictedString128">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="128"></xs:maxLength>
+		<xs:pattern value="[^\.\-_]+"></xs:pattern>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="restrictedDecimalMin0.1">
+	<xs:restriction base="xs:decimal">
+		<xs:minInclusive value="0.1"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="restrictedString32">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="32"></xs:maxLength>
+		<xs:pattern value="[^\.,&amp;:;~@()#!?$*=_]+"></xs:pattern> 
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="mailType">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*\.[a-zA-Z]{2,3}"></xs:pattern> 
+	</xs:restriction>
+</xs:simpleType>
+	
+<xs:simpleType name="telType">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="\d{10}|(\d{2}\s){5}|[0]\s(\d{3}\s){3}|(\+33)\s\d\s(\d{2}\s){4}"></xs:pattern>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="genderType">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="M."></xs:enumeration>
+		<xs:enumeration value="Mme"></xs:enumeration>
+		<xs:enumeration value="Miss"></xs:enumeration>
+		<xs:enumeration value="Mrs"></xs:enumeration>
+		<xs:enumeration value="Mr"></xs:enumeration>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="priorityType">
+	<xs:restriction base="xs:integer">
+		<xs:minInclusive value="0"></xs:minInclusive>
+		<xs:maxInclusive value="10"></xs:maxInclusive>
+	</xs:restriction>
+</xs:simpleType>
+
+</xs:schema>
