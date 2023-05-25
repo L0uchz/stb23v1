@@ -5,6 +5,7 @@ import fr.univrouen.stb23v1.model.STB23Repository;
 import fr.univrouen.stb23v1.util.TransformXML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.xml.transform.TransformerException;
 import java.util.List;
 
-@RestController
+@Controller
 public class WebController {
 
     @Autowired
@@ -23,7 +24,6 @@ public class WebController {
         return "index";
     }
 
-    //A complèter a la fin
     @GetMapping("/help")
     public String help(){
         return "help";
@@ -62,7 +62,7 @@ public class WebController {
             e.printStackTrace();
         }
 
-        return "stb23.result.html";
+        return "stb23.result";
 
     }
 
@@ -92,7 +92,7 @@ public class WebController {
             e.printStackTrace();
         }
 
-        return "stb23.result.html";
+        return "stb23.result";
 
     }
 
