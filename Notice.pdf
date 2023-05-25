@@ -1,0 +1,12 @@
+I.	Accès depuis un serveur local :
+
+Afin de lancer le serveur en local, il suffit de lancer l’application serveur via la classe Stb23b1Application.java présente dans le paquetage fr.univrouen.stb23 ()
+Le serveur sera alors disponible par défaut à l’adresse http://localhosst:8080/
+
+II.	Accès depuis le serveur ClerverCloud :
+
+Lorsque le serveur est allumé, il est disponible à l’adresse https://stb23-nsonda.cleverapps.io/
+
+III.	Lancement du client
+
+Le client est lançable depuis le paquetage fr.univrouen.stb23.client présent dans le dossier Client via la classe Application.java (Client → fr → univrouen → stb23 → client)
