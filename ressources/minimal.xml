@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:stb xmlns:p="http://univrouen.fr/stb23" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://univrouen.fr/stb23 ../src/main/resources/stb23.xsd ">
+    <title>STB 23 minimal</title>
+    <version>0.1</version>
+    <date>2001-01-01</date>
+    <description>Fichier de test valide</description>
+    <client>
+        <entity>entity</entity>
+        <person lastname="deku">
+            <nom>Antoine</nom>
+        </person>
+        <mail>Antoine@fac.com</mail>
+    </client>
+    <team>
+        <member>
+            <person lastname="Bozo">
+                <nom>Nicolas</nom>
+            </person>
+            <mail>Nicolas51@bozo.fr</mail>
+            <function>Développeur </function>
+        </member>
+        <member>
+            <person lastname="Jim">
+                <nom>CHEF</nom>
+            </person>
+            <mail>JIM.chef@test4.com</mail>
+            <function>Architecte logiciel</function>
+        </member>
+    </team>
+    <features>
+        <feature name="Type" number="5" section="3">
+            <description>description</description>
+            <priority>0</priority>
+        </feature>
+    </features>
+</p:stb>

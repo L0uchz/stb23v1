@@ -1,6 +1,8 @@
 package fr.univrouen.stb23v1.model;
 
 import jakarta.xml.bind.annotation.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,44 +14,68 @@ public class STB implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
     @XmlAttribute
     private Integer id;
 
+    @Field
     @XmlElement(name = "title", required = true)
     private String title;
 
-    @XmlElement(name = "published", required = true)
-    private String published;
+    @Field
+    @XmlElement(name = "version", required = true)
+    private float version;
 
+    @Field
+    @XmlElement(name = "published", required = true)
+    private Date published;
+
+    @Field
     @XmlElement(name = "description", required = true)
     private String description;
 
+    @Field
     @XmlElement(name = "validate", required = true)
-    private String dateValidation;
+    private Date dateValidation;
 
+    @Field
     @XmlElements({ @XmlElement(name = "client", required = true) })
-    private String clientName;
+    private Client clientName;
 
+    @Field
     @XmlElements({ @XmlElement(name = "team", required = true) })
-    private String team;
+    private Team team;
 
+    @Field
     @XmlElements({ @XmlElement(name = "features", required = true) })
-    private String features;
+    private Features features;
 
-    public STB(Integer id, String title, String published,String description, String dateValidation, String clientName){
+    public STB(Integer id, String title,Float version, Date published,String description, Date dateValidation, Client clientName,
+                Team team, Features features){
         super();
         this.id = id;
         this.title = title;
+        this.version = version;
         this.published = published;
         this.description = description;
-        this.dateValidation =dateValidation;
+        this.dateValidation = dateValidation;
         this.clientName = clientName;
+        this.team = team;
+        this.features = features;
     }
 
     public STB(){
     }
 
+    public int getId(){
+        return id;
+    }
+
+    public int setId(int id){
+        return this.id = id;
+    }
     public static long getSerialVersionUID() {
+
         return serialVersionUID;
     }
 
@@ -57,7 +83,11 @@ public class STB implements Serializable {
         return title;
     }
 
-    public String getPublished() {
+    public Float getVersion(){
+        return version;
+    }
+
+    public Date getPublished() {
         return published;
     }
 
@@ -65,27 +95,28 @@ public class STB implements Serializable {
         return description;
     }
 
-    public String getClientName() {
+    public Client getClientName() {
         return clientName;
     }
 
-    public String getDateValidation(){
+    public Date getDateValidation(){
         return dateValidation;
     }
 
-    public String getTeam() {
+    public Team getTeam() {
         return team;
     }
 
-    public String getFeatures() {
+    public Features getFeatures() {
         return features;
     }
 
 
     @Override
     public String toString(){
-        return ("STB (" + id.toString() + ") du " + published + "\n" + title + "\n à propos de " + description +
-                "\nvalidé le" + dateValidation + "\n pour " + clientName + "\npar " + team + "\navec les fonctionnalités : " + features);
+        return ("STB (" + id.toString() + ") du " + published + "\n" + title + "\nVersion : " + version +"\n à propos de " + description +
+                "\nvalidé le" + dateValidation.toString() + "\n pour " + clientName.toString() + "\npar " + team.toString()
+                + "\navec les fonctionnalités : " + features.toString());
 
     }
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:stb xmlns:p="http://univrouen.fr/stb23" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://univrouen.fr/stb23 ../src/main/resources/stb23.xsd ">
+    <title>STB 23 maxiamal</title>
+    <version>0.2</version>
+    <date>2023-02-15</date>
+    <description>Fichier de test valide</description>
+    <client>
+        <entity>Mark 3</entity>
+        <person lastname="Fabrice" gender="M.">
+            <nom>Martin</nom>
+        </person>
+        <tel>0123456789</tel>
+    </client>
+    <team>
+        <member>
+            <person lastname="A" gender="Mrs">
+                <nom>Albert</nom>
+            </person>
+            <mail>albert.test@mail.com</mail>
+            <function>Chef de projet</function>
+            <function>développeur</function>
+        </member>
+        <member>
+            <person lastname="B" gender="Mr">
+                <nom>Bastien</nom>
+            </person>
+            <mail>bastientesteur@test.fr</mail>
+            <function>testeur</function>
+        </member>
+        <member>
+            <person lastname="C"  gender="Mme">
+                <nom>Charlyne</nom>
+            </person>
+            <mail>charlyne-test@test56.Com</mail>
+            <function>QA</function>
+            <function>testeuse</function>
+        </member>
+        <member>
+            <person lastname="D" gender="Miss">
+                <nom>Adams</nom>
+            </person>
+            <mail>albert.adams@example.com</mail>
+            <function>développeuse</function>
+        </member>
+        <member>
+            <person lastname="E" gender="M.">
+                <nom>Anderson</nom>
+            </person>
+            <mail>Andersontest@mail.com</mail>
+            <function>Analyste fonctionnel</function>
+        </member>
+        <member>
+            <person lastname="F" gender="M.">
+                <nom>Allen</nom>
+            </person>
+            <mail>allen.test@mail.com</mail>
+            <function>Ingénieur DevOps</function>
+        </member>
+        <member>
+            <person lastname="G" gender="Mrs">
+                <nom>Mathias</nom>
+            </person>
+            <mail>Mathias.test@mail.com</mail>
+            <function>Responsable de la documentation technique</function>
+        </member>
+        <member>
+            <person lastname="H" gender="Mr">
+                <nom>Archer</nom>
+            </person>
+            <mail>archer.test@mail.com</mail>
+            <function>Administrateur système</function>
+        </member>
+
+
+    </team>
+    <features>
+        <feature name="debug" number="15" section="3">
+            <description>Enlever les bugs de l'application</description>
+            <priority>8</priority>
+            <delivery>2023-02-23</delivery>
+            <comment>a faire au plus vite</comment>
+        </feature>
+    </features>
+</p:stb>

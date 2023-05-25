@@ -1,17 +1,22 @@
 package fr.univrouen.stb23v1.model;
 
 import jakarta.xml.bind.annotation.*;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @XmlRootElement
 @XmlType(name = "person")
 @XmlAccessorType(XmlAccessType.NONE)
 public class Person {
 
+    @Field
     @XmlAttribute(required = true)
     private String gender;
+
+    @Field
     @XmlAttribute
     private String lastname;
 
+    @Field
     @XmlElement(required = true)
     private String name;
 

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>STB non trouvé</title>
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Article non trouvé</h1>
+<p>Titre : <span th:text="${title}"></span></p>
+<p>Erreur : <span th:text="${errorMessage}"></span></p>
+<p>Status : 404</p>
+
+</body>
+</html>

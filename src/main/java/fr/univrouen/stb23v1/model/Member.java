@@ -3,18 +3,24 @@ package fr.univrouen.stb23v1.model;
 import java.util.List;
 
 import jakarta.xml.bind.annotation.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @XmlRootElement
 @XmlType(name = "member")
 @XmlAccessorType(XmlAccessType.NONE)
 public class Member {
 
+    @Id
+    @Field
     @XmlElements({@XmlElement (name = "person", required = true)})
     private Person person;
 
+    @Field
     @XmlElement(required = true)
     private String mail;
 
+    @Field
     @XmlElement(required = true)
     private List<String> function;
 

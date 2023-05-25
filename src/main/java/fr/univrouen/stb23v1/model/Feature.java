@@ -2,6 +2,8 @@ package fr.univrouen.stb23v1.model;
 
 
 import jakarta.xml.bind.annotation.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 
 @XmlRootElement
@@ -9,24 +11,32 @@ import jakarta.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.NONE)
 public class Feature {
 
+    @Field
     @XmlElement(required = true)
     private String description;
 
+    @Field
     @XmlElement(required = true)
     private int priority;
 
+    @Field
     @XmlElement
     private String delivery;
 
+    @Field
     @XmlElement
     private String comment;
 
+    @Id
+    @Field
     @XmlAttribute(required = true)
     private String name;
 
+    @Field
     @XmlAttribute(required = true)
     private int section;
 
+    @Field
     @XmlAttribute(required = true)
     private int number;
 

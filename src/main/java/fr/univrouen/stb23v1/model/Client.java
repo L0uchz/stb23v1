@@ -1,6 +1,8 @@
 package fr.univrouen.stb23v1.model;
 
 import jakarta.xml.bind.annotation.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
@@ -9,15 +11,21 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.NONE)
 public class Client {
 
+
+    @Id
+    @Field
     @XmlElement(required = true)
     private String entity;
 
+    @Field
     @XmlElements({@XmlElement (name = "person", required = true)})
     private Person person;
 
+    @Field
     @XmlElement
     private List<String> mail;
 
+    @Field
     @XmlElement
     private List<String> tel;
 
