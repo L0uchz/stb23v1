@@ -1,0 +1,324 @@
+{
+	"stb": [
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{server_name}}/",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/help",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{server_name}}/help",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"help"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/resume/xml",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://{{server_name}}/resume/xml",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"resume",
+						"xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/resume/html",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://{{server_name}}/resume/html",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"resume",
+						"html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/resume/xml/id",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://{{server_name}}/resume/xml/2",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"resume",
+						"xml",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/resume/xml/id Error",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://{{server_name}}/resume/xml/-12",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"resume",
+						"xml",
+						"-12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resume/html/id",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://{{server_name}}/resume/html/1",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"resume",
+						"html",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resume/html/id Error",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://{{server_name}}/resume/html/-10",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"resume",
+						"html",
+						"-10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/insert good",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<p:stb \n<title>STB 23 minimal</title>\n<version>0.1</version>\n<date>2001-01-01</date>\n<description>Fichier de test valide</description>\n<client>\n<entity>entity</entity>\n<person lastname=\"deku\">\n<nom>Antoine</nom>\n</person>\n<mail>Antoine@fac.com</mail>\n</client>\n<team>\n<member>\n<person lastname=\"Bozo\">\n<nom>Nicolas</nom>\n</person>\n<mail>Nicolas51@bozo.fr</mail>\n<function>Développeur </function>\n</member>\n<member>\n<person lastname=\",Jim \">\n<nom>CHEF</nom>\n</person>\n<mail>JIM.chef@test4.com</mail>\n<function>Architecte logiciel</function>\n</member>\n</team>\n<features>\n<feature name=\"Type\" number=\"5\" section=\"3\">\n<description>description</description>\n<priority>0</priority>\n</feature>\n</features>\n</p:stb>"
+				},
+				"url": {
+					"raw": "http://{{server_name}}/insert",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/insert bad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<p:stb \n<title>STB 23 minimal</title>\n<version>0.1</version>\n<date>2001-01-01</date>\n<description>Fichier de test valide</description>\n<client>\n<entity>entity</entity>\n<person lastname=\"deku\">\n<nom>Antoine</nom>\n</person>\n<mail>Antoine@fac.com</mail>\n</client>\n<team>\n<member>\n<person lastname=\"Bozo\">\n<nom>Nicolas</nom>\n</person>\n<mail>Nicolas51@bozo.fr</mail>\n<function>Développeur </function>\n</member>\n<member>\n<person lastname=\",Jim \">\n<nom>CHEF</nom>\n</person>\n<mail>JIM.chef@test4.com</mail>\n<function>Architecte logiciel</function>\n</member>\n</team>\n<features>\n<feature name=\"Type\" number=\"5\" section=\"3\">\n<description>description</description>\n<priority>0</priority>\n</feature>\n</features>\n</p:stb>"
+				},
+				"url": {
+					"raw": "http://{{server_name}}/insert",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/delete/id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{server_name}}/delete/c8f21483-c849-4c07-b529-19f64d5c48a4",
+					"protocol": "http",
+					"host": [
+						"{{server_name}}"
+					],
+					"path": [
+						"delete",
+						"c8f21483-c849-4c07-b529-19f64d5c48a4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server_name",
+			"value": "stb23-nsonda.cleverapps.io"
+		}
+	]
+}
